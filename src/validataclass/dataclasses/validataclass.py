@@ -84,9 +84,9 @@ def validataclass(cls: Optional[Type[_T]] = None, **kwargs) -> Union[Type[_T], C
         # In Python 3.10 and higher, we use kw_only=True by default to allow for required and optional fields in any order.
         # In older Python versions, we use a workaround by setting default_factory to a function that raises an exception
         # for required fields.
-        if sys.version_info >= (3, 10):  # pragma: ignore-py-lt-310
+        if sys.version_info >= (3, 10):
             kwargs.setdefault('kw_only', True)
-        else:  # pragma: ignore-py-gte-310
+        else:
             pass
 
         _prepare_dataclass_metadata(_cls)

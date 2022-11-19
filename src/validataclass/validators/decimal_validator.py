@@ -140,7 +140,7 @@ class DecimalValidator(StringValidator):
         # Try to parse string as decimal value
         try:
             decimal_out = Decimal(decimal_string)
-        except InvalidOperation:  # pragma: nocover
+        except InvalidOperation:
             raise InvalidDecimalError()
 
         # Check if value is in allowed range
